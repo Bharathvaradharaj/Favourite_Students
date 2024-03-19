@@ -26,12 +26,7 @@ function App() {
 
       setFavStu([...favStu, favarr]);
     }
-    // else {
-    //   return false
-    // }
-
-
-
+   
   }
 
   return (

@@ -3,27 +3,20 @@ import { useContext } from "react"
 import { NameContext } from "../App"
 
 const ListStu = () => {
-    const { listStu, setlistStu } = useContext(NameContext)
-const{addfav}= useContext(NameContext)
+    const { listStu, addfav  ,favStu} = useContext(NameContext)
+    const [clickedIds, setClickedIds] = useState([]);
+    
 
-    // function addfav(clickid) {
+    const handleAddFavClick = (id) => {
+        if (!clickedIds.includes(id)) {
+            setClickedIds([...clickedIds, id]);
+            addfav(id);
+            console.log(addfav)
+        }
+    };
 
-    //    var favarr = listStu.filter(function(items){
-
-    //     if(items.id ==clickid){
-
-    //         return true
-    //     }
-    //     else{
-    //         return false
-    //     }
-    //    })
-
-    //    setlistStu(favarr)
-    // }
-
-
-    return (
+   
+ return (
         <>
             {
                 listStu.map(function (items) {
@@ -31,7 +24,13 @@ const{addfav}= useContext(NameContext)
                         <h1 className="p-3">{items.id}. {items.Stuname}</h1>
 
 
-                        <button className="bg-black w-fit text-white border rounded-md " onClick={() => addfav(items.id)}> Add to Favourite</button>
+                        <button className="bg-black w-fit text-white border rounded-md " 
+                        
+                        onClick={() => handleAddFavClick(items.id)}
+                        disabled={clickedIds.includes(items.id) || favStu.some((favItem) => favItem.id === items.id)}
+                    >
+                        {favStu.some((favItem) => favItem.id === items.id) ? "Added to Favorite" : "Add to Favorite"}
+                    </button>
 
                     </div>
                 })
