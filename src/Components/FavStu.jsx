@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useContext } from "react"
-import { NameContext } from "./App"
+import { NameContext } from "./NameContextProvider"
 
 
 const FavStu = () => {
