@@ -4,6 +4,7 @@ import FavStu from "./Components/FavStu";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { createContext } from "react";
 import { useState } from "react";
+// import NameContextProvider from "./Components/NameContextProvider";
 const NameContext = createContext()
 function App() {
 
@@ -11,12 +12,7 @@ function App() {
 
   const [favStu, setFavStu] = useState([]);
 
-  // const addfav = (clickid) => {
-  //   const student = listStu.find((item) => item.id === clickid);
-  //   if (student) {
-  //     setFavStu([...favStu, student]);
-  //   }
-  // }
+  
 
   const addfav = (clickid) => {
 

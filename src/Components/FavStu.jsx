@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useContext } from "react"
-import { NameContext } from "../App"
+import { NameContext } from "./App"
 
 
 const FavStu = () => {
@@ -11,7 +11,7 @@ const FavStu = () => {
 
 
 
-        
+
 
         var temparr = favStu.filter(function (items, index) {
             if (items.id == removeid) {
